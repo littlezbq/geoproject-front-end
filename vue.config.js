@@ -7,6 +7,14 @@ const cesiumSource = 'node_modules/cesium/Source'
 const cesiumWorkers = '../Build/Cesium/Workers'
 
 module.exports = {
+  //settings for packing project
+  // 公共路径(必须有的)
+  publicPath: "./",
+  // // 输出文件目录 与 flask的 template 同名 可以直接替换
+  outputDir: "templates",
+  // // 静态资源存放的文件夹(相对于ouputDir)
+  assetsDir: "static",//将js 和 css 相关的静态资源存放
+
   lintOnSave: false,
   configureWebpack: {
     output: {
@@ -44,17 +52,17 @@ module.exports = {
       unknownContextRegExp: /\/cesium\/cesium\/Source\/Core\/buildModuleUrl\.js/
     }
   },
-  devServer:{
-    proxy:{
-      '/':{//代理接口前缀为/uploadFiles的请求
-        target: 'http://localhost:8000',//对应的代理地址
-        secure: false,
-        changeOrigin: true,
-        ws: false,
-        pathRewrite:{
-          '^/':''
-        }
-      },
-    },
-  }
+  // devServer:{
+  //   proxy:{
+  //     '/':{//代理接口前缀为/uploadFiles的请求
+  //       target: 'http://localhost:8000',//对应的代理地址
+  //       secure: false,
+  //       changeOrigin: true,
+  //       ws: false,
+  //       pathRewrite:{
+  //         '^/':''
+  //       }
+  //     },
+  //   },
+  // }
 };
