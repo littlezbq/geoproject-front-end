@@ -75,9 +75,13 @@ export default {
                     
                         // 获取到需要的登临点经纬度坐标及可视域文件存在的路径，根据鼠标点击实时加载出目标登临点的可视域
                         var ExposivePointCoords = response.data.result.exposivepoint_numlist_absolute;
+
+                        var ExposiveResultPath = response.data.result.exposive_result_path;
                         
                         // 将登临点列表和可视域文件基路径存入vuex中
                         this.$store.commit("modifyExposivePointCoords",ExposivePointCoords);
+                        this.$store.commit("modifyExposivePointResultPath",ExposiveResultPath);
+
 
                         if (ExposivePointCoords != ''){
                             this.$store.state.exposivePointFunction();

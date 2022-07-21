@@ -54,8 +54,8 @@ export default {
                 ascensionPointNum:"5",
                 label:"5"
             },{
-                ascensionPointNum:"10",
-                label:"10"
+                ascensionPointNum:"100",
+                label:"100"
             }],
             divideSpace:"",
         }
